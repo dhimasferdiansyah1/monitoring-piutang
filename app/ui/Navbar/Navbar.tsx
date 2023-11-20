@@ -16,18 +16,25 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // Handle closing the menu when the window is resized
     window.addEventListener("resize", () => {
       setOpenMenu(false);
     });
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("resize", () => {
         setOpenMenu(false);
       });
     };
   }, []);
+
+  useEffect(() => {
+    if (openMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      // jika menu ditutup, maka overflow normal
+      document.body.style.overflow = "auto";
+    }
+  }, [openMenu]);
 
   return (
     <div className="max-w-7xl mx-auto mb-10">
@@ -63,8 +70,8 @@ const Navbar = () => {
           </div>
         </div>
         <ul
-          className={`md:hidden block z-[2000] h-[100vh] shadow-lg p-4 pb-10 bg-white left-0 w-full text-lg font-medium text-gray-800 ${
-            openMenu ? "absolute" : "hidden"
+          className={`md:hidden absolute z-[2000] h-[100vh] shadow-lg p-4 pb-10 bg-white left-0 w-full text-lg font-medium text-gray-800 ${
+            openMenu ? "overflow-hidden" : "hidden"
           }`}
         >
           <li className="pt-4">
