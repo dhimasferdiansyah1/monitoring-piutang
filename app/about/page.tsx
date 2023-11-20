@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactPage = () => {
+const page = () => {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="flex min-h-screen justify-center">
@@ -10,4 +10,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default page;

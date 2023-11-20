@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Transition } from "react-transition-group";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -10,25 +11,46 @@ const Navbar = () => {
     setOpenMenu((prevState) => !prevState);
   };
 
+  const handleLinkClick = () => {
+    setOpenMenu(false);
+  };
+
+  useEffect(() => {
+    // Handle closing the menu when the window is resized
+    window.addEventListener("resize", () => {
+      setOpenMenu(false);
+    });
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", () => {
+        setOpenMenu(false);
+      });
+    };
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto mb-10">
       <div className="md:container mx-auto">
         <div className="flex py-4 bg-white justify-between items-center px-4 border-b border-gray-300 md:border-none">
           <div className="">
-            <h1 className="text-2xl font-bold text-gray-800">
+            <Link href="/" className="text-2xl font-bold text-gray-800">
               Monitoring Piutang
-            </h1>
+            </Link>
           </div>
           <div className="flex">
             <ul className="text-lg font-bold text-gray-800 hidden md:flex md:gap-6">
               <li>
-                <a href="">Contact</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <a href="">About</a>
+                <Link href="/contact">Contact</Link>
               </li>
               <li>
-                <a href="">Dashboard</a>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="#">Dashboard</Link>
               </li>
             </ul>
             <button onClick={toggleMenu}>
@@ -46,13 +68,24 @@ const Navbar = () => {
           }`}
         >
           <li className="pt-4">
-            <a href="">Contact</a>
+            <Link href="/" onClick={handleLinkClick}>
+              Home
+            </Link>
           </li>
           <li className="pt-4">
-            <a href="">About</a>
+            <Link href="/contact" onClick={handleLinkClick}>
+              Contact
+            </Link>
           </li>
           <li className="pt-4">
-            <a href="">Dashboard</a>
+            <Link href="/about" onClick={handleLinkClick}>
+              About
+            </Link>
+          </li>
+          <li className="pt-4">
+            <Link href="#" onClick={handleLinkClick}>
+              Dashboard
+            </Link>
           </li>
         </ul>
       </div>
