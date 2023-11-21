@@ -8,7 +8,7 @@ export default function Home() {
         <div className="md:flex md:flex-row md:item-center">
           <div className="basis-2/3 lg:pr-48 md:pr-20">
             <Image
-              src="/img/logo.png"
+              src="/img/logo.webp"
               alt="LogoPerusahaan"
               width={200}
               height={200}

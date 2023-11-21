@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <>
       <form>
-        <div className="flex flex-col gap-4 py-4">
+        <div className="flex flex-col gap-4 py-4 pb-40 md:pb-4">
           <label className="text-gray-800">Email</label>
           <input
             type="text"
