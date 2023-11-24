@@ -59,7 +59,7 @@ const Navbar = () => {
                 <Link href="#">Dashboard</Link>
               </li>
             </ul>
-            <button onClick={toggleMenu}>
+            <button aria-label="Hamburger Menu Icon" onClick={toggleMenu}>
               {openMenu ? (
                 <XMarkIcon className="w-6 h-6 md:hidden cursor-pointer" />
               ) : (
