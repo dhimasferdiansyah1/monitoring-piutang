@@ -56,7 +56,7 @@ const Navbar = () => {
                 <Link href="/about">About</Link>
               </li>
               <li>
-                <Link href="#">Dashboard</Link>
+                <Link href="/">Dashboard</Link>
               </li>
             </ul>
             <button aria-label="Hamburger Menu Icon" onClick={toggleMenu}>
@@ -89,7 +89,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="pt-4">
-            <Link href="#" onClick={handleLinkClick}>
+            <Link href="/" onClick={handleLinkClick}>
               Dashboard
             </Link>
           </li>
