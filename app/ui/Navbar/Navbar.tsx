@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -65,8 +66,12 @@ const Navbar = () => {
         }
       >
         <div className=" flex w-full justify-between items-center max-w-7xl mx-auto md:container">
-          <div className="">
-            <Link href="/" className="text-2xl font-bold text-gray-800">
+          <div className="flex">
+            <Link
+              href="/"
+              className="text-lg sm:text-2xl font-bold text-gray-800 flex gap-2 items-center"
+            >
+              <Image src="/img/logo.webp" alt="logo" width={40} height={40} />
               Monitoring Piutang
             </Link>
           </div>

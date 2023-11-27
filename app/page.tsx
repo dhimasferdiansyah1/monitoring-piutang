@@ -23,7 +23,7 @@ export default function Home() {
               tanggal jatuh tempo, jumlah tagihan, dan status pembayaran
             </p>
           </div>
-          <div className="basis-1/3 mt-12 sm:px-36 px-8 md:px-0">
+          <div className="basis-1/3 mt-12 sm:px-16 px-2 md:px-0">
             <div className="text-center mt-4 font-bold text-2xl text-gray-800 lg:hidden">
               Login
             </div>

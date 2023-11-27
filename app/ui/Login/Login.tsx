@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Login = () => {
@@ -20,6 +21,10 @@ const Login = () => {
           <button className="hover:shadow-md px-16 py-4 bg-gradient-to-r from-[#9FE699] to-[#1EB35A] hover:bg-gradient-to-r hover:from-[#8ece88] hover:to-[#29a55b] font-bold text-xl text-white rounded-full">
             Login
           </button>
+          <Link href="/contact" className="text-center">
+            Belum punya akun?{" "}
+            <span className="text-blue-700 hover:text-blue-800">Request</span>
+          </Link>
         </div>
       </form>
     </>
