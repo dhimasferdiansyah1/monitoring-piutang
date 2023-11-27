@@ -56,7 +56,7 @@ const Navbar = () => {
   }, [openMenu]);
 
   return (
-    <div className="w-full mx-auto md:mb-28">
+    <div className="w-full mx-auto md:mb-28 mb-14">
       <div
         className={
           navbar
