@@ -26,6 +26,26 @@ const Navbar = () => {
     };
   }, []);
 
+  //Navbar onscroll
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
+
+  //"max-w-7xl mx-auto mb-10"
   useEffect(() => {
     if (openMenu) {
       document.body.style.overflow = "hidden";
@@ -36,9 +56,15 @@ const Navbar = () => {
   }, [openMenu]);
 
   return (
-    <div className="max-w-7xl mx-auto mb-10">
-      <div className="md:container mx-auto">
-        <div className="flex py-4 bg-white justify-between items-center px-4 border-b border-gray-300 md:border-none">
+    <div className="w-full mx-auto md:mb-28">
+      <div
+        className={
+          navbar
+            ? "flex md:fixed top-0 bg-[#fffffff1] shadow-lg transition duration-300 ease-in-out text-white md:mb-10 py-4 px-4 border-b border-gray-300 md:border-none w-full 2xl:px-32"
+            : "flex md:fixed top-0 transition duration-300 ease-in-out md:mb-10 py-4 px-4 border-b border-gray-300 md:border-none w-full 2xl:px-32"
+        }
+      >
+        <div className=" flex w-full justify-between items-center max-w-7xl mx-auto md:container">
           <div className="">
             <Link href="/" className="text-2xl font-bold text-gray-800">
               Monitoring Piutang
@@ -47,16 +73,24 @@ const Navbar = () => {
           <div className="flex">
             <ul className="text-lg font-bold text-gray-800 hidden md:flex md:gap-6">
               <li>
-                <Link href="/">Home</Link>
+                <Link className="hover:text-green-600" href="/">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <Link className="hover:text-green-600" href="/contact">
+                  Contact
+                </Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link className="hover:text-green-600" href="/about">
+                  About
+                </Link>
               </li>
               <li>
-                <Link href="/">Dashboard</Link>
+                <Link className="hover:text-green-600" href="/">
+                  Dashboard
+                </Link>
               </li>
             </ul>
             <button aria-label="Hamburger Menu Icon" onClick={toggleMenu}>
@@ -68,33 +102,33 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <ul
-          className={`md:hidden absolute z-[2000] h-[100vh] shadow-lg p-4 pb-10 bg-white left-0 w-full text-lg font-medium text-gray-800 ${
-            openMenu ? "overflow-hidden" : "hidden"
-          }`}
-        >
-          <li className="pt-4">
-            <Link href="/" onClick={handleLinkClick}>
-              Home
-            </Link>
-          </li>
-          <li className="pt-4">
-            <Link href="/contact" onClick={handleLinkClick}>
-              Contact
-            </Link>
-          </li>
-          <li className="pt-4">
-            <Link href="/about" onClick={handleLinkClick}>
-              About
-            </Link>
-          </li>
-          <li className="pt-4">
-            <Link href="/" onClick={handleLinkClick}>
-              Dashboard
-            </Link>
-          </li>
-        </ul>
       </div>
+      <ul
+        className={`md:hidden absolute z-[2000] h-[100vh] shadow-lg p-4 pb-10 bg-white left-0 w-full text-lg font-medium text-gray-800 ${
+          openMenu ? "overflow-hidden" : "hidden"
+        }`}
+      >
+        <li className="pt-4">
+          <Link href="/" onClick={handleLinkClick}>
+            Home
+          </Link>
+        </li>
+        <li className="pt-4">
+          <Link href="/contact" onClick={handleLinkClick}>
+            Contact
+          </Link>
+        </li>
+        <li className="pt-4">
+          <Link href="/about" onClick={handleLinkClick}>
+            About
+          </Link>
+        </li>
+        <li className="pt-4">
+          <Link href="/" onClick={handleLinkClick}>
+            Dashboard
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 };

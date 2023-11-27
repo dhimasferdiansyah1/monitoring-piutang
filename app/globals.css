@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: blue;
+}
+
+.nav-link span {
+  display: inline-block;
+  padding: 0 20px;
+  border-bottom: 2px transparent;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover span {
+  transform: translateX(10px);
+  border-bottom-color: blue;
+}
