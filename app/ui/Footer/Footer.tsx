@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 py-4">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex flex-wrap justify-between items-center">
+    <footer className="py-4 bg-gray-800">
+      <div className="container px-4 mx-auto max-w-7xl">
+        <div className="flex flex-wrap items-center justify-between">
           <div className="text-white">
             &copy; {new Date().getFullYear()} Monitoring Piutang. All rights
             reserved.

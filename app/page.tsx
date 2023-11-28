@@ -3,8 +3,8 @@ import Login from "./ui/Login/Login";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-7xl md:mt-24 min-h-screen">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen mx-auto max-w-7xl md:mt-24">
+      <div className="container px-4 mx-auto">
         <div className="md:flex md:flex-row md:item-center">
           <div className="basis-2/3 lg:pr-48 md:pr-20">
             <Image
@@ -14,17 +14,17 @@ export default function Home() {
               height={200}
               className="w-auto h-auto"
             />
-            <h1 className="text-3xl font-bold text-gray-800 mt-8">
+            <h1 className="mt-8 text-3xl font-bold text-gray-800">
               SISTEM INFORMASI MONITORING TAGIHAN PIUTANG KE CUSTOMER KEY
               ACCOUNT MODERN
             </h1>
-            <p className="text-gray-500 mt-8">
+            <p className="mt-8 text-gray-500">
               Dapatkan informasi terkini tentang status piutang, termasuk
               tanggal jatuh tempo, jumlah tagihan, dan status pembayaran
             </p>
           </div>
-          <div className="basis-1/3 mt-12 sm:px-16 px-2 md:px-0">
-            <div className="text-center mt-4 font-bold text-2xl text-gray-800 lg:hidden">
+          <div className="px-2 mt-12 basis-1/3 sm:px-16 md:px-0">
+            <div className="mt-4 text-2xl font-bold text-center text-gray-800 lg:hidden">
               Login
             </div>
             <Login />

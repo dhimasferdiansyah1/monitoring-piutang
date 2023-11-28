@@ -65,18 +65,18 @@ const Navbar = () => {
             : "flex md:fixed top-0 transition duration-300 ease-in-out md:mb-10 py-4 px-4 border-b border-gray-300 md:border-none w-full 2xl:px-32"
         }
       >
-        <div className=" flex w-full justify-between items-center max-w-7xl mx-auto md:container">
+        <div className="flex items-center justify-between w-full mx-auto max-w-7xl md:container">
           <div className="flex">
             <Link
               href="/"
-              className="text-lg sm:text-2xl font-bold text-gray-800 flex gap-2 items-center"
+              className="flex items-center gap-2 text-lg font-bold text-gray-800 sm:text-2xl"
             >
               <Image src="/img/logo.webp" alt="logo" width={40} height={40} />
               Monitoring Piutang
             </Link>
           </div>
           <div className="flex">
-            <ul className="text-lg font-bold text-gray-800 hidden md:flex md:gap-6">
+            <ul className="hidden text-lg font-bold text-gray-800 md:flex md:gap-6">
               <li>
                 <Link className="hover:text-green-600" href="/">
                   Home
@@ -100,9 +100,9 @@ const Navbar = () => {
             </ul>
             <button aria-label="Hamburger Menu Icon" onClick={toggleMenu}>
               {openMenu ? (
-                <XMarkIcon className="w-6 h-6 md:hidden cursor-pointer" />
+                <XMarkIcon className="w-6 h-6 cursor-pointer md:hidden" />
               ) : (
-                <Bars3Icon className="w-6 h-6 md:hidden cursor-pointer" />
+                <Bars3Icon className="w-6 h-6 cursor-pointer md:hidden" />
               )}
             </button>
           </div>
