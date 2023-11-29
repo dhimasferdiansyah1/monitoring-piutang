@@ -57,12 +57,12 @@ const Navbar = () => {
   }, [openMenu]);
 
   return (
-    <div className="w-full mx-auto md:mb-28 mb-14">
+    <div className="w-full mx-auto md:mb-28 mb-[100px]">
       <div
         className={
           navbar
-            ? "flex md:fixed top-0 bg-[#fffffff1] shadow-lg transition duration-300 ease-in-out text-white md:mb-10 py-4 px-4 border-b border-gray-300 md:border-none w-full 2xl:px-32"
-            : "flex md:fixed top-0 transition duration-300 ease-in-out md:mb-10 py-4 px-4 border-b border-gray-300 md:border-none w-full 2xl:px-32"
+            ? "flex fixed top-0 bg-[#ffffffab] backdrop-blur-md md:border-b md:border-gray-300 transition duration-300 ease-in-out text-white md:mb-10 py-4 px-4 border-b border-gray-300 w-full 2xl:px-32"
+            : "flex fixed top-0 transition duration-300 backdrop-blur-md ease-in-out md:mb-10 py-4 px-4 border-b border-gray-300 md:border-none w-full 2xl:px-32"
         }
       >
         <div className="flex items-center justify-between w-full mx-auto max-w-7xl md:container">
@@ -71,7 +71,13 @@ const Navbar = () => {
               href="/"
               className="flex items-center gap-2 text-lg font-bold text-gray-800 sm:text-2xl"
             >
-              <Image src="/img/logo.webp" alt="logo" width={40} height={40} />
+              <Image
+                src="/img/logo.webp"
+                alt="logo"
+                width={40}
+                height={40}
+                className="w-auto h-auto"
+              />
               Monitoring Piutang
             </Link>
           </div>
@@ -98,7 +104,11 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <button aria-label="Hamburger Menu Icon" onClick={toggleMenu}>
+            <button
+              aria-label="Hamburger Menu Icon"
+              onClick={toggleMenu}
+              className="text-gray-800"
+            >
               {openMenu ? (
                 <XMarkIcon className="w-6 h-6 cursor-pointer md:hidden" />
               ) : (
@@ -109,7 +119,7 @@ const Navbar = () => {
         </div>
       </div>
       <ul
-        className={`md:hidden absolute z-[2000] h-[100vh] shadow-lg p-4 pb-10 bg-white left-0 w-full text-lg font-medium text-gray-800 ${
+        className={`md:hidden backdrop-blur-md m-[2px] fixed z-[2000] h-[100vh] shadow-lg p-4 pb-10 bg-[#ffffffab] left-0 w-full text-lg font-medium text-gray-800 ${
           openMenu ? "overflow-hidden" : "hidden"
         }`}
       >

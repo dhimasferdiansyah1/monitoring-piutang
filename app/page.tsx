@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Login from "./ui/Login/Login";
+import Pwa from "./ui/Pwa/Pwa";
 
 export default function Home() {
   return (
-    <div className="min-h-screen mx-auto max-w-7xl md:mt-24">
-      <div className="container px-4 mx-auto">
+    <div className="min-h-screen mx-auto max-w-7xl md:mt-24 -mt-7">
+      <div className="container px-4 mx-auto pt-4">
         <div className="md:flex md:flex-row md:item-center">
+          <Pwa />
           <div className="basis-2/3 lg:pr-48 md:pr-20">
             <Image
               src="/img/logo.webp"

@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactPage = () => {
   return (
-    <div className="mx-auto max-w-7xl">
+    <div className="mx-auto max-w-7xl -mt-7">
       <div className="container flex min-h-screen justify-center mx-auto px-4 lg:px-0">
         <form className="w-96">
           <div className="text-center">
